@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    padding-top: 70px; /* Altura aproximada da navbar */
 }
 
 .container {
@@ -19,26 +20,45 @@ body {
     margin: auto;
 }
 
-/* Cabeçalho */
+/* --------------------------- */
+/* Cabeçalho com menu hambúrguer */
+/* --------------------------- */
 header {
     background-color: #004080;
     color: #fff;
-    padding: 20px 0;
+    padding: 15px 0;
+    position: fixed; /* Torna a navbar fixa */
+    top: 0; /* Fixa no topo */
+    left: 0; /* Alinha à esquerda */
+    width: 100%; /* Largura total */
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 header h1 {
-    text-align: center;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin: 0;
+}
+
+/* Menu nav */
+nav {
+    position: relative;
 }
 
 nav ul {
     display: flex;
-    justify-content: center;
     list-style: none;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-left: 15px;
 }
 
 nav ul li a {
@@ -47,24 +67,114 @@ nav ul li a {
     font-weight: bold;
 }
 
+/* Ícone menu hamburguer */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    body {
+        padding-top: 60px; /* Ajuste para mobile se necessário */
+    }
+
+    header {
+        padding: 10px 0;
+    }
+    nav ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 160px;
+        background-color: #004080;
+        flex-direction: column;
+        display: none;
+        padding: 10px 0;
+        border-radius: 4px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 20px;
+        text-align: right;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+}
+
+/* --------------------------- */
 /* Seção Hero */
 .hero {
-    background: url("divisoria.jpg") no-repeat center center/cover;
-    color: #fff;
-    padding: 100px 0;
+    background-color: #f0f0f0;
+    padding: 60px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+    text-align: left;
+    color: #333;
+}
+
+.hero-image {
+    flex: 1;
     text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero .btn {
     display: inline-block;
     margin-top: 20px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #ff8000;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
 }
 
+.hero .btn:hover {
+    background-color: #e67300;
+}
+
+/* Responsivo para mobile */
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+/* --------------------------- */
 /* Seções */
 section {
     padding: 60px 0;
@@ -81,6 +191,7 @@ section {
     margin-bottom: 20px;
 }
 
+/* --------------------------- */
 /* Formulário de Contato */
 form {
     display: flex;
@@ -104,10 +215,54 @@ form button {
     cursor: pointer;
 }
 
+/* --------------------------- */
 /* Rodapé */
 footer {
     background-color: #004080;
     color: #fff;
     text-align: center;
     padding: 20px 0;
+}
+
+/* --------------------------- */
+/* Ícone do WhatsApp */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.whatsapp-icon img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    animation: pulse 2s infinite;
+    border-radius: 50%;
 }

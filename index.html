@@ -8,10 +8,11 @@
     </head>
     <body>
         <header>
-            <div class="container">
+            <div class="header-container">
                 <h1>ALL Divisa Decorações</h1>
                 <nav>
-                    <ul>
+                    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+                    <ul id="menu">
                         <li><a href="#sobre">Sobre</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#contato">Contato</a></li>
@@ -22,12 +23,25 @@
 
         <section class="hero">
             <div class="container">
-                <h2>Especialistas em Divisórias e Forros</h2>
-                <p>
-                    Transformamos espaços com soluções sob medida em divisórias
-                    e forros.
-                </p>
-                <a href="#contato" class="btn">Solicite um Orçamento</a>
+                <div class="hero-content">
+                    <h2>Soluções em Divisórias, Forros e Persianas</h2>
+                    <p>
+                        Qualidade, agilidade e bom gosto para transformar seus
+                        ambientes.
+                    </p>
+                    <a
+                        href="https://wa.me/5567992011664"
+                        class="btn"
+                        target="_blank"
+                        >Fale conosco no WhatsApp</a
+                    >
+                </div>
+                <div class="hero-image">
+                    <img
+                        src="img/Hero.png"
+                        alt="Exemplo de divisória decorativa"
+                    />
+                </div>
             </div>
         </section>
 
@@ -35,10 +49,9 @@
             <div class="container">
                 <h2>Sobre Nós</h2>
                 <p>
-                    Com anos de experiência no mercado, a ALL Divisa Decorações
-                    oferece soluções inovadoras e de alta qualidade em
-                    divisórias e forros para ambientes corporativos e
-                    residenciais.
+                    A ALL Divisa Decorações é referência em divisórias, forros e
+                    persianas, oferecendo soluções sob medida com excelente
+                    acabamento e atendimento personalizado.
                 </p>
             </div>
         </section>
@@ -47,24 +60,42 @@
             <div class="container">
                 <h2>Nossos Serviços</h2>
                 <div class="servico">
-                    <h3>Divisórias de Gesso</h3>
+                    <h3>Divisória de Escritório / Naval</h3>
                     <p>
-                        Instalação de divisórias de gesso acartonado para
-                        ambientes modernos e funcionais.
+                        Ideal para ambientes corporativos, proporcionando
+                        praticidade e elegância.
                     </p>
                 </div>
                 <div class="servico">
-                    <h3>Forros de PVC</h3>
+                    <h3>Divisória Drywall / Gesso Acartonado</h3>
                     <p>
-                        Aplicação de forros de PVC duráveis e estéticos para
-                        diversos tipos de ambientes.
+                        Leve, resistente e com ótimo isolamento acústico e
+                        térmico.
                     </p>
                 </div>
                 <div class="servico">
-                    <h3>Divisórias de Vidro</h3>
+                    <h3>Divisória em PVC</h3>
                     <p>
-                        Montagem de divisórias de vidro que proporcionam
-                        elegância e aproveitamento de luz natural.
+                        Durável, fácil de limpar e indicada para ambientes
+                        úmidos.
+                    </p>
+                </div>
+                <div class="servico">
+                    <h3>Forro Drywall</h3>
+                    <p>
+                        Acabamento sofisticado e funcional para tetos
+                        rebaixados.
+                    </p>
+                </div>
+                <div class="servico">
+                    <h3>Forro de Isopor</h3>
+                    <p>Ótima opção térmica e econômica, com montagem rápida.</p>
+                </div>
+                <div class="servico">
+                    <h3>Persianas</h3>
+                    <p>
+                        Modelos variados para controle de luz, conforto e
+                        estética.
                     </p>
                 </div>
             </div>
@@ -74,8 +105,8 @@
             <div class="container">
                 <h2>Contato</h2>
                 <p>
-                    Entre em contato conosco para mais informações ou para
-                    solicitar um orçamento personalizado.
+                    Entre em contato para solicitar um orçamento personalizado
+                    ou tirar suas dúvidas.
                 </p>
                 <form>
                     <input type="text" placeholder="Seu Nome" required />
@@ -94,5 +125,27 @@
                 </p>
             </div>
         </footer>
+        <!-- Ícone do WhatsApp -->
+        <section class="whatsapp-icon">
+            <a
+                href="https://wa.me/5567992011664/?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20da%20ALL%20Divisa%20Decorações."
+                target="_blank"
+                title="Fale com a ALL Divisa Decorações pelo WhatsApp"
+                aria-label="Abrir conversa no WhatsApp com a ALL Divisa Decorações"
+            >
+                <img
+                    src="img/whatsapp-logo-128x128_resized.png"
+                    alt="WhatsApp da ALL Divisa Decorações"
+                />
+            </a>
+        </section>
+        <script>
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+
+            toggle.addEventListener("click", () => {
+                menu.classList.toggle("show");
+            });
+        </script>
     </body>
 </html>

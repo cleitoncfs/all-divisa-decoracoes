@@ -578,49 +578,49 @@ footer p {
     nav ul li {
         margin: 10px 0;
     }
-}
 
-/* Animação X */
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
+    /* Animação X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
 
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
 
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-}
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
 
-.hero .container {
-    flex-direction: column;
-}
+    .hero .container {
+        flex-direction: column;
+    }
 
-.hero-content h2 {
-    font-size: 1.8rem;
-}
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
 
-section {
-    padding: 60px 0;
-}
+    section {
+        padding: 60px 0;
+    }
 
-.galeria-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
 
-.lightbox-conteudo {
-    width: 95%;
-    height: 80vh;
-}
+    .lightbox-conteudo {
+        width: 95%;
+        height: 80vh;
+    }
 
-.redes-sociais {
-    gap: 15px;
-}
+    .redes-sociais {
+        gap: 15px;
+    }
 
-.redes-sociais a {
-    width: 35px;
-    height: 35px;
+    .redes-sociais a {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -633,12 +633,7 @@ section {
     }
 
     .menu-toggle {
-        width: 35px;
-        height: 30px;
-    }
-
-    .menu-toggle span {
-        height: 4px;
+        font-size: 30px;
     }
 
     .hero-content h2 {
@@ -664,18 +659,6 @@ section {
             padding: 10px;
             border-radius: 50%;
             line-height: 1;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .servicos-grid {
-            grid-template-columns: 1fr; /* 1 coluna só */
-            gap: 15px; /* menos gap para aproveitar melhor o espaço */
-            margin-top: 30px;
-        }
-
-        .servico {
-            padding: 20px; /* diminuir padding para ficar mais compacto */
         }
     }
 

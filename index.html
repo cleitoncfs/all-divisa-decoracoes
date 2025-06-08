@@ -3,6 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Especialista em Divisórias de Drywall, Forros Acartonados e Persianas em Campo Grande. Transformamos ambientes com soluções sob medida, rápido atendimento e preços competitivos. Atendemos toda a região do Mato Grosso do Sul."
+        />
         <title>ALL Divisa Decorações</title>
         <link rel="stylesheet" href="css/style.css" />
     </head>
@@ -17,7 +21,18 @@
                     />
                 </a>
                 <nav>
-                    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+                    <button
+                        class="menu-toggle"
+                        id="menu-toggle"
+                        aria-label="Abrir menu"
+                        aria-expanded="false"
+                        aria-controls="menu"
+                    >
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
                     <ul id="menu">
                         <li><a href="#sobre">Sobre</a></li>
                         <li><a href="#servicos">Serviços</a></li>
@@ -122,63 +137,54 @@
                         <img
                             src="img/Img1.jpg"
                             alt="Projeto 1 - Divisória de escritório/naval"
-                            onclick="abrirLightbox(0)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img2.jpg"
                             alt="Projeto 2 - Divisória de escritório/naval"
-                            onclick="abrirLightbox(1)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img3.jpg"
                             alt="Projeto 3 - Divisória de escritório/naval"
-                            onclick="abrirLightbox(2)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img4.jpg"
                             alt="Projeto 4 - Divisória gesso acartonado/drywall"
-                            onclick="abrirLightbox(3)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img5.jpg"
                             alt="Projeto 5 - Divisória gesso acartonado/drywall"
-                            onclick="abrirLightbox(4)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img6.jpg"
                             alt="Projeto 6 - Divisória gesso acartonado/drywall"
-                            onclick="abrirLightbox(5)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img7.jpg"
                             alt="Projeto 7 - Divisórias especiais"
-                            onclick="abrirLightbox(6)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img8.jpg"
                             alt="Projeto 8 - Forros e acabamentos"
-                            onclick="abrirLightbox(7)"
                         />
                     </div>
                     <div class="galeria-item">
                         <img
                             src="img/Img9.jpg"
                             alt="Projeto 9 - Persianas e divisórias"
-                            onclick="abrirLightbox(8)"
                         />
                     </div>
                 </div>
@@ -187,11 +193,11 @@
 
         <!-- Lightbox -->
         <div id="lightbox" class="lightbox">
-            <span class="fechar" onclick="fecharLightbox()">&times;</span>
+            <span id="lightbox-fechar" class="fechar">&times;</span>
             <div class="lightbox-conteudo">
                 <img id="lightbox-imagem" src="" alt="" />
-                <a class="anterior" onclick="mudarImagem(-1)">&#10094;</a>
-                <a class="proxima" onclick="mudarImagem(1)">&#10095;</a>
+                <a id="lightbox-anterior" class="anterior">&#10094;</a>
+                <a id="lightbox-proximo" class="proxima">&#10095;</a>
             </div>
         </div>
         <!-- Contato -->
@@ -202,12 +208,27 @@
                     Entre em contato para solicitar um orçamento personalizado
                     ou tirar suas dúvidas.
                 </p>
-                <form>
-                    <input type="text" placeholder="Seu Nome" required />
-                    <input type="email" placeholder="Seu Email" required />
-                    <textarea placeholder="Sua Mensagem" required></textarea>
+                <form id="formContato">
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Seu Nome"
+                        required
+                    />
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Seu Email"
+                        required
+                    />
+                    <textarea
+                        id="mensagem"
+                        placeholder="Sua Mensagem"
+                        required
+                    ></textarea>
                     <button type="submit">Enviar</button>
                 </form>
+                <div id="feedbackMensagem" class="feedback-msg"></div>
             </div>
         </section>
         <!-- Rodapé -->
@@ -215,14 +236,14 @@
             <div class="container">
                 <div class="redes-sociais">
                     <a
-                        href="https://www.instagram.com/seuinstagram"
+                        href="https://www.instagram.com/alldivisadecoracoes/"
                         target="_blank"
                         aria-label="Instagram"
                     >
                         <img src="img/instagram-icon.png" alt="Instagram" />
                     </a>
                     <a
-                        href="https://www.facebook.com/seufacebook"
+                        href="https://www.facebook.com/AllDivisaDecoracoesLtda/?locale=pt_BR"
                         target="_blank"
                         aria-label="Facebook"
                     >
@@ -256,105 +277,37 @@
                 />
             </a>
         </div>
-
-        <script>
-            // Menu Mobile
-            const toggle = document.getElementById("menu-toggle");
-            const menu = document.getElementById("menu");
-            toggle.addEventListener("click", () =>
-                menu.classList.toggle("show")
-            );
-
-            // Lightbox Gallery
-            const imagensGaleria = [
-                "img/Img1.jpg",
-                "img/Img2.jpg",
-                "img/Img3.jpg",
-                "img/Img4.jpg",
-                "img/Img5.jpg",
-                "img/Img6.jpg",
-                "img/Img7.jpg",
-                "img/Img8.jpg",
-                "img/Img9.jpg",
-            ];
-
-            let imagemAtual = 0;
-
-            function abrirLightbox(index) {
-                const lightbox = document.getElementById("lightbox");
-                const lightboxImg = document.getElementById("lightbox-imagem");
-
-                imagemAtual = index;
-                lightboxImg.src = imagensGaleria[index];
-                lightboxImg.alt =
-                    document.querySelectorAll(".galeria-item img")[index].alt;
-                lightbox.style.display = "block";
-                document.body.style.overflow = "hidden";
-            }
-
-            function fecharLightbox() {
-                document.getElementById("lightbox").style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-
-            function mudarImagem(n) {
-                imagemAtual =
-                    (imagemAtual + n + imagensGaleria.length) %
-                    imagensGaleria.length;
-                const lightboxImg = document.getElementById("lightbox-imagem");
-                lightboxImg.src = imagensGaleria[imagemAtual];
-                lightboxImg.alt =
-                    document.querySelectorAll(".galeria-item img")[
-                        imagemAtual
-                    ].alt;
-            }
-
-            // Event Listeners
-            document
-                .getElementById("lightbox")
-                .addEventListener("click", function (e) {
-                    if (e.target === this) fecharLightbox();
-                });
-
-            document.addEventListener("keydown", function (e) {
-                const lightbox = document.getElementById("lightbox");
-                if (lightbox.style.display === "block") {
-                    if (e.key === "Escape") fecharLightbox();
-                    if (e.key === "ArrowLeft") mudarImagem(-1);
-                    if (e.key === "ArrowRight") mudarImagem(1);
+        <!-- Lógica -->
+        <script src="js/scripts.js" defer></script>
+        <!-- SEO -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "HomeAndConstructionBusiness",
+                "name": "ALL Divisa Decorações",
+                "image": "https://www.seusite.com/img/logo.jpg",
+                "description": "Especialista em Divisórias, Forros e Persianas em Campo Grande/MS",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "[Endereço Completo]",
+                    "addressLocality": "Campo Grande",
+                    "addressRegion": "MS",
+                    "postalCode": "[CEP]"
+                },
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": "-20.4697",
+                    "longitude": "-54.6201"
+                },
+                "telephone": "[67] 99201-1664",
+                "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
+                "priceRange": "$$",
+                "url": "https://www.seusite.com",
+                "areaServed": {
+                    "@type": "State",
+                    "name": "Mato Grosso do Sul"
                 }
-            });
-
-            // Destaque do menu ativo
-            document.querySelectorAll("nav a").forEach((link) => {
-                link.addEventListener("click", function () {
-                    document
-                        .querySelectorAll("nav a")
-                        .forEach((l) => l.classList.remove("active"));
-                    this.classList.add("active");
-                });
-            });
-
-            // Verifica a posição de rolagem para destacar o menu
-            window.addEventListener("scroll", function () {
-                const sections = document.querySelectorAll("section");
-                let current = "";
-
-                sections.forEach((section) => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - 300) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                document.querySelectorAll("nav a").forEach((link) => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === `#${current}`) {
-                        link.classList.add("active");
-                    }
-                });
-            });
+            }
         </script>
     </body>
 </html>
